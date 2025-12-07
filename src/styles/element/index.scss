@@ -1,0 +1,24 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      // 主色，使用更鲜艳的蓝色作为马卡龙主色
+      'base': #ca0aca,
+    ),
+    'success': (
+      // 成功色，使用更明亮的绿色作为马卡龙成功色
+      'base': #47d986,
+    ),
+    'warning': (
+      // 警告色，使用更鲜明的黄色作为马卡龙警告色
+      'base': #e2bd26,
+    ),
+    'danger': (
+      // 危险色，使用更鲜艳的粉色作为马卡龙危险色
+      'base': #bd2323,
+    ),
+    'error': (
+      // 错误色，使用更醒目的红色作为马卡龙错误色
+      'base': #ea2a15,
+    ),
+  )
+);
