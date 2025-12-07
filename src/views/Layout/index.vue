@@ -1,5 +1,14 @@
 <template>
-  <h1>我是页面布局</h1>
-  <router-view/> <!--Layout 下的路由出口-->
+  <Navigate/>
+  <Header/>
+  <RouterView/> <!--Layout 下的路由出口-->
+  <Footer/>
 </template>
-<script setup></script>
+<script setup>
+import Navigate from "@/views/Layout/components/Navigate.vue";
+import Header from "@/views/Layout/components/Header.vue";
+import Footer from "@/views/Layout/components/Footer.vue";
+</script>
+<style scoped>
+
+</style>
