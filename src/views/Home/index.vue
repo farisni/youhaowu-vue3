@@ -1,6 +1,19 @@
 <template>
-  <div style="height: 1500px">我是Home</div>
+  <div class="container">
+    <Category/>
+    <Banner/>
+  </div>
+  <NewGoods />
+  <HotRecommended />
+  <Product />
 </template>
+<script setup>
+import Category from './components/Category.vue'
+import Banner from './components/Banner.vue'
+import NewGoods from './components/NewGoods.vue'
+import HotRecommended from './components/HotRecommend.vue'
+import Product from './components/Product.vue'
+</script>
 <style scoped>
 
 </style>
