@@ -7,7 +7,8 @@
           <RouterLink to="/">首页</RouterLink>
         </li>
         <li v-for="item in categoryList" :key="item.id">
-          <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
+          <!--`/category/${item.id}`-->
+          <RouterLink active-class="active" to="/">{{ item.name }}</RouterLink>
         </li>
       </ul>
       <div class="search">

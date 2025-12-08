@@ -24,7 +24,7 @@ onMounted(() => getBanner())
   width: 990px;
   height: 500px;
   position: absolute;
-  left: 250px;
+  left: 250px; // 距离左边让出Category位置
   top: 0;
   z-index: 98;
 

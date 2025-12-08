@@ -4,5 +4,8 @@ export default {
   getCategory() {
     return http.get('/home/category/head')
   },
-  getBanner(params) { return http.get("/home/banner")}
+  getBanner(params) { return http.get("/home/banner")},
+  getNewGoods() {
+    return http.get("/home/new")
+  }
 }
