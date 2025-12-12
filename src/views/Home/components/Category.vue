@@ -46,7 +46,6 @@ const { categoryList } = storeToRefs(categoryStore)
       height: 55px;
       line-height: 55px;
       margin: 0 auto;
-      //text-align: center;
 
       &:hover {
         background: $mainColor;
@@ -86,15 +85,12 @@ const { categoryList } = storeToRefs(categoryStore)
         ul {
           display: flex;
           flex-wrap: wrap;
-          //justify-content: space-evenly;
           padding: 15px;
           gap:15px;
 
           li {
             width: calc(($layer-width - 30px - 30px )/3);
             height: 120px;
-            //margin-right: 15px;
-            //margin-bottom: 15px;
             border: 1px solid #eee;
             border-radius: 4px;
             background: #fff;
