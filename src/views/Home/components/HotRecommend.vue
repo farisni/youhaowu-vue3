@@ -1,16 +1,3 @@
-<script setup>
-import Panel from './Panel.vue'
-import api from '@/api/home.js'
-
-const hotList = ref([])
-const getHotList = async () => {
-  const res = await api.getHot()
-  hotList.value = res.result
-}
-
-onMounted(() => getHotList())
-</script>
-
 <template>
   <Panel title="人气推荐" sub-title="人气爆款 不容错过">
     <ul class="goods-list">
@@ -25,7 +12,18 @@ onMounted(() => getHotList())
     </ul>
   </Panel>
 </template>
+<script setup>
+import Panel from './Panel.vue'
+import api from '@/api/home.js'
 
+const hotList = ref([])
+const getHotList = async () => {
+  const res = await api.getHot()
+  hotList.value = res.result
+}
+
+onMounted(() => getHotList())
+</script>
 <style scoped lang="scss">
 .goods-list {
   display: flex;

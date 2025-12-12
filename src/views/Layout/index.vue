@@ -2,7 +2,7 @@
   <TopFixed />
   <Navigate/>
   <Header/>
-  <RouterView/> <!--Layout 下的路由出口-->
+  <RouterView/> <!--Layout 下的路由出口（二级路由）-->
   <Footer/>
 </template>
 <script setup>

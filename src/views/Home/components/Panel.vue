@@ -1,19 +1,3 @@
-<script setup>
-/*自定义子组件*/
-/*父子组件数据传递*/
-defineProps({
-  title: {
-    type: String,
-    default: ''
-  },
-  subTitle: {
-    type: String,
-    default: ''
-  }
-})
-</script>
-
-
 <template>
   <div class="home-panel">
     <div class="container">
@@ -29,6 +13,21 @@ defineProps({
     </div>
   </div>
 </template>
+<script setup>
+/*自定义子组件*/
+/*父子组件数据传递*/
+defineProps({
+  title: {
+    type: String,
+    default: ''
+  },
+  subTitle: {
+    type: String,
+    default: ''
+  }
+})
+</script>
+
 
 <style scoped lang='scss'>
 .home-panel {
