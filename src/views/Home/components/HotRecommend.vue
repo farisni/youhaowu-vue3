@@ -3,8 +3,8 @@
     <ul class="goods-list">
       <li v-for="item in hotList" :key="item.id">
         <RouterLink to="/">
-          <!--v-img-lazy="item.picture"-->
-          <img :src="item.picture" alt="">
+          <!--图片懒加载，当isIntersecting = true 才给src值，所以src不需要-->
+          <img v-img-lazy="item.picture"  alt="">
           <p class="name">{{ item.title }}</p>
           <p class="desc">{{ item.alt }}</p>
         </RouterLink>
