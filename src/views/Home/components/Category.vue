@@ -47,7 +47,7 @@ const { categoryList } = storeToRefs(categoryStore)
       line-height: 55px;
 
       &:hover {
-        background: $xtxColor;
+        background: $mainColor;
       }
 
       a {

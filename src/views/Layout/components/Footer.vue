@@ -69,7 +69,8 @@
 .app_footer {
   overflow: hidden;
   background-color: #f5f5f5;
-  padding-top: 20px;
+  //margin-top: 20px;
+  //padding-top: 20px;
 
   .contact {
     background: #fff;
@@ -117,7 +118,7 @@
 
       &:hover {
         .iconfont {
-          color: $xtxColor;
+          color: $mainColor;
         }
       }
 
@@ -151,7 +152,7 @@
         margin-top: 5px;
         color: #fff;
         border-radius: 2px;
-        background-color: $xtxColor;
+        background-color: $mainColor;
       }
     }
 

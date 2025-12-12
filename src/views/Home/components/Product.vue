@@ -40,7 +40,7 @@ $cover-width:240px;
   margin: 0 auto;
   background: #fff;
   //margin-top: 20px;
-  border-top: 1px solid red;
+  border-top: 1px solid #e4e4e4;
   //.sub {
   //  margin-bottom: 2px;
   //

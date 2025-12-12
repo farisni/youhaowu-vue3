@@ -82,7 +82,7 @@ const { categoryList } = storeToRefs(categoryStore)
     display: flex;
     text-align: center;
     padding-left: 40px;
-    border-left: 2px solid $xtxColor;
+    border-left: 2px solid $mainColor;
 
     a {
       width: 38px;
@@ -91,7 +91,7 @@ const { categoryList } = storeToRefs(categoryStore)
       line-height: 1;
 
       &:hover {
-        color: $xtxColor;
+        color: $mainColor;
       }
     }
   }
@@ -116,14 +116,14 @@ const { categoryList } = storeToRefs(categoryStore)
       display: inline-block;
 
       &:hover {
-        color: $xtxColor;
-        border-bottom: 1px solid $xtxColor;
+        color: $mainColor;
+        border-bottom: 1px solid $mainColor;
       }
     }
 
     .active {
-      color: $xtxColor;
-      border-bottom: 1px solid $xtxColor;
+      color: $mainColor;
+      border-bottom: 1px solid $mainColor;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <h>我是分类</h>
+  <h1>我是分类</h1>
 </template>
 <script setup>
 

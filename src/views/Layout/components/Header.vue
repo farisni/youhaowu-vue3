@@ -8,7 +8,7 @@
         </li>
         <li v-for="item in categoryList" :key="item.id">
           <!--`/category/${item.id}`-->
-          <RouterLink active-class="active" to="/">{{ item.name }}</RouterLink>
+          <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         </li>
       </ul>
       <div class="search">
@@ -66,14 +66,14 @@ const { categoryList } = storeToRefs(categoryStore)
         display: inline-block;
 
         &:hover {
-          color: $xtxColor;
-          border-bottom: 1px solid $xtxColor;
+          color: $mainColor;
+          border-bottom: 1px solid $mainColor;
         }
       }
 
       .active {
-        color: $xtxColor;
-        border-bottom: 1px solid $xtxColor;
+        color: $mainColor;
+        border-bottom: 1px solid $mainColor;
       }
     }
   }

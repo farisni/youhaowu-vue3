@@ -15,7 +15,7 @@ const router = createRouter({
         component: Home,
       },
         {
-          path:'category', // 不用加 "/"
+          path:'category/:id', // 不用加 "/"
           component: Category
         }
       ]

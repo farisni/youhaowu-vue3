@@ -59,7 +59,7 @@ const logout = () => {
         }
 
         &:hover {
-          color: $xtxColor;
+          color: $mainColor;
         }
       }
 
