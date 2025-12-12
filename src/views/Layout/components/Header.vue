@@ -1,7 +1,8 @@
 <template>
   <header class='app-header'>
     <div class="container">
-      <RouterLink class="logo" to="/" />
+      <RouterLink  to="/" />
+      <img src="@/assets/images/logo.png" alt="">
       <ul class="app-header-nav">
         <li class="home">
           <RouterLink to="/">首页</RouterLink>
@@ -35,15 +36,13 @@ const { categoryList } = storeToRefs(categoryStore)
   .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 80px;
 
-
-    .logo {
-      width: 200px;
-      height: 80px;
-      background: url("@/assets/images/logo.png") no-repeat right 2px;
-      background-size: 160px auto;
+    > img{
+      height: 70px;
     }
+
 
   }
 

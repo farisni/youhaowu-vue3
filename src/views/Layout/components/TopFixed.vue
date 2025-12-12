@@ -1,7 +1,8 @@
 <template>
   <div class="app-header-sticky" :class="{ show: y > 78 }">
     <div class="container">
-      <RouterLink class="logo" to="/" />
+      <RouterLink to="/" />
+      <img src="@/assets/images/logo.png" alt="">
       <!-- 导航区域 -->
       <ul class="app-header-nav ">
         <li class="home">
@@ -67,14 +68,13 @@ const { categoryList } = storeToRefs(categoryStore)
   .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    > img{
+      height: 70px;
+    }
+
   }
 
-  .logo {
-    width: 200px;
-    height: 80px;
-    background: url("@/assets/images/logo.png") no-repeat right 2px;
-    background-size: 160px auto;
-  }
 
   .right {
     width: 220px;

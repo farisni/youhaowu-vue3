@@ -8,14 +8,14 @@
           <el-breadcrumb-item>{{ categoryData.name }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
-      <!--&lt;!&ndash; 轮播图 &ndash;&gt;-->
-      <!--<div class="home-banner">-->
-      <!--  <el-carousel height="500px">-->
-      <!--    <el-carousel-item v-for="item in bannerList" :key="item.id">-->
-      <!--      <img :src="item.imgUrl" alt="">-->
-      <!--    </el-carousel-item>-->
-      <!--  </el-carousel>-->
-      <!--</div>-->
+      <!-- 轮播图 -->
+      <div class="home-banner">
+        <el-carousel :height=state.carouselHeight>
+          <el-carousel-item v-for="item in bannerList" :key="item.id">
+            <img :src="item.imgUrl" alt="">
+          </el-carousel-item>
+        </el-carousel>
+      </div>
       <!--&lt;!&ndash; 产品分类 &ndash;&gt;-->
       <!--<div class="sub-list">-->
       <!--  <h3>全部分类</h3>-->
@@ -43,18 +43,25 @@
 <script setup>
 // import GoodsItem from '@/views/Home/components/GoodsItem.vue'
 import { useCategory } from '@/views/Category/composables/useCategory'
-// import { useBanner } from '@/views/Category/composables/useBanner'
+import { useBanner } from '@/views/Category/composables/useBanner'
 
 // 根据一级分类ID获取商品分类
 const { categoryData } = useCategory()
-
-
 // 获取banner
-// const { bannerList } = useBanner()
+const { bannerList } = useBanner()
+
+
+const state = ref({
+  carouselHeight:'500px'
+})
 
 </script>
 <style scoped lang="scss">
 .top-category {
+
+  width: $home-width;
+  margin: 0 auto;
+
   h3 {
     font-size: 28px;
     color: #666;
