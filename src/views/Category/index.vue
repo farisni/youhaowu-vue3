@@ -16,32 +16,32 @@
           </el-carousel-item>
         </el-carousel>
       </div>
-      <!--&lt;!&ndash; 产品分类 &ndash;&gt;-->
-      <!--<div class="sub-list">-->
-      <!--  <h3>全部分类</h3>-->
-      <!--  <ul>-->
-      <!--    <li v-for="i in categoryData.children" :key="i.id">-->
-      <!--      <RouterLink :to="`/category/sub/${i.id}`">-->
-      <!--        <img :src="i.picture" />-->
-      <!--        <p>{{ i.name }}</p>-->
-      <!--      </RouterLink>-->
-      <!--    </li>-->
-      <!--  </ul>-->
-      <!--</div>-->
-      <!--<div class="ref-goods" v-for="item in categoryData.children" :key="item.id">-->
-      <!--  <div class="head">-->
-      <!--    <h3>- {{ item.name }}-</h3>-->
-      <!--  </div>-->
-      <!--  <div class="body">-->
-      <!--    <GoodsItem v-for="good in item.goods" :good="good" :key="good.id" />-->
-      <!--  </div>-->
-      <!--</div>-->
+      <!-- 产品分类 -->
+      <div class="sub-list">
+        <h3>全部分类</h3>
+        <ul>
+          <li v-for="i in categoryData.children" :key="i.id">
+            <RouterLink :to="`/category/sub/${i.id}`">
+              <img :src="i.picture" />
+              <p>{{ i.name }}</p>
+            </RouterLink>
+          </li>
+        </ul>
+      </div>
+      <div class="ref-goods" v-for="item in categoryData.children" :key="item.id">
+        <div class="head">
+          <h3>{{ item.name }}</h3>
+        </div>
+        <div class="body">
+          <GoodsItem v-for="good in item.goods" :good="good" :key="good.id" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// import GoodsItem from '@/views/Home/components/GoodsItem.vue'
+import GoodsItem from '@/views/Home/components/GoodsItem.vue'
 import { useCategory } from '@/views/Category/composables/useCategory'
 import { useBanner } from '@/views/Category/composables/useBanner'
 
@@ -74,15 +74,16 @@ const state = ref({
     margin-top: 20px;
     background-color: #fff;
 
+
     ul {
       display: flex;
       padding: 0 32px;
       flex-wrap: wrap;
 
+
       li {
         width: 168px;
         height: 160px;
-
 
         a {
           text-align: center;
@@ -129,7 +130,7 @@ const state = ref({
 
     .body {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       padding: 0 40px 30px;
     }
   }

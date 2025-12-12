@@ -13,6 +13,7 @@ export const useCategory = () => {
 
   // 导航守卫：用于解决路由缓存问题
   onBeforeRouteUpdate((to) => {
+    // 将要访问的路由id
     getCategory(to.params.id)
   })
 

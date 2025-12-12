@@ -8,7 +8,7 @@ export const useBanner = () => {
     const res = await api.getBanner({
       distributionSite: '2'
     })
-    console.log(res)
+    // console.log(res)
     bannerList.value = res.result
   }
 
