@@ -18,101 +18,101 @@
         </el-breadcrumb>
       </div>
       <!-- 商品信息 -->
-      <!--<div class="info-container">-->
-      <!--  <div>-->
-      <!--    <div class="goods-info">-->
-      <!--      <div class="media">-->
-      <!--        &lt;!&ndash; 图片预览区 &ndash;&gt;-->
-      <!--        <ImgageView :image-list="goods.mainPictures"/>-->
-      <!--        &lt;!&ndash; 统计数量 &ndash;&gt;-->
-      <!--        <ul class="goods-sales">-->
-      <!--          <li>-->
-      <!--            <p>销量人气</p>-->
-      <!--            <p> {{ goods.salesCount }}+ </p>-->
-      <!--            <p><i class="iconfont icon-task-filling"></i>销量人气</p>-->
-      <!--          </li>-->
-      <!--          <li>-->
-      <!--            <p>商品评价</p>-->
-      <!--            <p>{{ goods.commentCount }}+</p>-->
-      <!--            <p><i class="iconfont icon-comment-filling"></i>查看评价</p>-->
-      <!--          </li>-->
-      <!--          <li>-->
-      <!--            <p>收藏人气</p>-->
-      <!--            <p>{{ goods.collectCount }}+</p>-->
-      <!--            <p><i class="iconfont icon-favorite-filling"></i>收藏商品</p>-->
-      <!--          </li>-->
-      <!--          <li>-->
-      <!--            <p>品牌信息</p>-->
-      <!--            <p>{{ goods.brand.name }}+</p>-->
-      <!--            <p><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>-->
-      <!--          </li>-->
-      <!--        </ul>-->
-      <!--      </div>-->
-      <!--      <div class="spec">-->
-      <!--        &lt;!&ndash; 商品信息区 &ndash;&gt;-->
-      <!--        <p class="g-name"> {{ goods.name }} </p>-->
-      <!--        <p class="g-desc">{{ goods.desc }} </p>-->
-      <!--        <p class="g-price">-->
-      <!--          <span>{{ goods.oldPrice }}</span>-->
-      <!--          <span> {{ goods.price }}</span>-->
-      <!--        </p>-->
-      <!--        <div class="g-service">-->
-      <!--          <dl>-->
-      <!--            <dt>促销</dt>-->
-      <!--            <dd>12月好物放送，App领券购买直降120元</dd>-->
-      <!--          </dl>-->
-      <!--          <dl>-->
-      <!--            <dt>服务</dt>-->
-      <!--            <dd>-->
-      <!--              <span>无忧退货</span>-->
-      <!--              <span>快速退款</span>-->
-      <!--              <span>免费包邮</span>-->
-      <!--              <a href="javascript:;">了解详情</a>-->
-      <!--            </dd>-->
-      <!--          </dl>-->
-      <!--        </div>-->
-      <!--        &lt;!&ndash; sku组件 &ndash;&gt;-->
-      <!--        <Sku :goods="goods" @change="skuChange"/>-->
-      <!--        &lt;!&ndash; 数据组件 &ndash;&gt;-->
-      <!--        <el-input-number v-model="count" min="1" />-->
-      <!--        &lt;!&ndash; 按钮组件 &ndash;&gt;-->
-      <!--        <div>-->
-      <!--          &lt;!&ndash;addCart&ndash;&gt;-->
-      <!--          <el-button size="large" class="btn" @click="">-->
-      <!--            加入购物车-->
-      <!--          </el-button>-->
-      <!--        </div>-->
+      <div class="info-container">
+        <div>
+          <div class="goods-info">
+            <div class="media">
+              <!-- 图片预览区 -->
+              <!--<ImgageView :image-list="goods.mainPictures"/>-->
+              <!-- 统计数量 -->
+              <ul class="goods-sales">
+                <li>
+                  <p>销量人气</p>
+                  <p> {{ goods.salesCount }}+ </p>
+                  <p><i class="iconfont icon-task-filling"></i>销量人气</p>
+                </li>
+                <li>
+                  <p>商品评价</p>
+                  <p>{{ goods.commentCount }}+</p>
+                  <p><i class="iconfont icon-comment-filling"></i>查看评价</p>
+                </li>
+                <li>
+                  <p>收藏人气</p>
+                  <p>{{ goods.collectCount }}+</p>
+                  <p><i class="iconfont icon-favorite-filling"></i>收藏商品</p>
+                </li>
+                <li>
+                  <p>品牌信息</p>
+                  <p>{{ goods.brand?.name }}+</p>
+                  <p><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
+                </li>
+              </ul>
+            </div>
+            <div class="spec">
+              <!-- 商品信息区 -->
+              <p class="g-name"> {{ goods.name }} </p>
+              <p class="g-desc">{{ goods.desc }} </p>
+              <p class="g-price">
+                <span>{{ goods.oldPrice }}</span>
+                <span> {{ goods.price }}</span>
+              </p>
+              <div class="g-service">
+                <dl>
+                  <dt>促销</dt>
+                  <dd>12月好物放送，App领券购买直降120元</dd>
+                </dl>
+                <dl>
+                  <dt>服务</dt>
+                  <dd>
+                    <span>无忧退货</span>
+                    <span>快速退款</span>
+                    <span>免费包邮</span>
+                    <a href="javascript:;">了解详情</a>
+                  </dd>
+                </dl>
+              </div>
+              <!-- sku组件 -->
+              <!--<Sku :goods="goods" @change="skuChange"/>-->
+              <!-- 数据组件 -->
+              <!--<el-input-number v-model="count" min="1" />-->
+              <!--&lt;!&ndash; 按钮组件 &ndash;&gt;-->
+              <!--<div>-->
+              <!--  &lt;!&ndash;addCart&ndash;&gt;-->
+              <!--  <el-button size="large" class="btn" @click="">-->
+              <!--    加入购物车-->
+              <!--  </el-button>-->
+              <!--</div>-->
 
-      <!--      </div>-->
-      <!--    </div>-->
-      <!--    <div class="goods-footer">-->
-      <!--      <div class="goods-article">-->
-      <!--        &lt;!&ndash; 商品详情 &ndash;&gt;-->
-      <!--        <div class="goods-tabs">-->
-      <!--          <nav>-->
-      <!--            <a>商品详情</a>-->
-      <!--          </nav>-->
-      <!--          <div class="goods-detail">-->
-      <!--            &lt;!&ndash; 属性 &ndash;&gt;-->
-      <!--            <ul class="attrs">-->
-      <!--              <li v-for="item in goods.details.properties" :key="item.value">-->
-      <!--                <span class="dt">{{ item.name }}</span>-->
-      <!--                <span class="dd">{{ item.value }}</span>-->
-      <!--              </li>-->
-      <!--            </ul>-->
-      <!--            &lt;!&ndash; 图片 &ndash;&gt;-->
-      <!--            <img v-for="img in goods.details.pictures" v-img-lazy="img" :key="img">-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      &lt;!&ndash; 24热榜+专题推荐 &ndash;&gt;-->
-      <!--      <div class="goods-aside">-->
-      <!--        <DetailHot :hot-type="1"/>-->
-      <!--        <DetailHot :hot-type="2" />-->
-      <!--      </div>-->
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</div>-->
+            </div>
+          </div>
+          <!--<div class="goods-footer">-->
+          <!--  <div class="goods-article">-->
+          <!--    &lt;!&ndash; 商品详情 &ndash;&gt;-->
+          <!--    <div class="goods-tabs">-->
+          <!--      <nav>-->
+          <!--        <a>商品详情</a>-->
+          <!--      </nav>-->
+          <!--      <div class="goods-detail">-->
+          <!--        &lt;!&ndash; 属性 &ndash;&gt;-->
+          <!--        <ul class="attrs">-->
+          <!--          <li v-for="item in goods.details.properties" :key="item.value">-->
+          <!--            <span class="dt">{{ item.name }}</span>-->
+          <!--            <span class="dd">{{ item.value }}</span>-->
+          <!--          </li>-->
+          <!--        </ul>-->
+          <!--        &lt;!&ndash; 图片 &ndash;&gt;-->
+          <!--        <img v-for="img in goods.details.pictures" v-img-lazy="img" :key="img">-->
+          <!--      </div>-->
+          <!--    </div>-->
+          <!--  </div>-->
+          <!--  &lt;!&ndash; 24热榜+专题推荐 &ndash;&gt;-->
+          <!--  <div class="goods-aside">-->
+          <!--    <DetailHot :hot-type="1"/>-->
+          <!--    <DetailHot :hot-type="2" />-->
+          <!--  </div>-->
+          <!--</div>-->
+        </div>
+      </div>
     </div>
   </div>
 </template>
