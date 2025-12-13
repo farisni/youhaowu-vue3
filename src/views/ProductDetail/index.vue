@@ -279,13 +279,13 @@ const count = ref(1)
 
             &::before {
               content: "•";
-              color:$mainColor;
+              color: $yhwColor;
               margin-right: 2px;
             }
           }
 
           a {
-            color:$mainColor;
+            color: $yhwColor;
           }
         }
       }
@@ -327,13 +327,13 @@ const count = ref(1)
           margin-top: 10px;
 
           i {
-            color:$mainColor;
+            color: $yhwColor;
             font-size: 14px;
             margin-right: 2px;
           }
 
           &:hover {
-            color:$mainColor;
+            color: $yhwColor;
             cursor: pointer;
           }
         }

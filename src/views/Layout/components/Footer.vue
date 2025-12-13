@@ -119,7 +119,7 @@
 
       &:hover {
         .iconfont {
-          color: $mainColor;
+          color: $yhwColor;
         }
       }
 
@@ -153,7 +153,7 @@
         margin-top: 5px;
         color: #fff;
         border-radius: 2px;
-        background-color: $mainColor;
+        background-color: $yhwColor;
       }
     }
 

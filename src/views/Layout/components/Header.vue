@@ -74,14 +74,14 @@ const { categoryList } = storeToRefs(categoryStore)
 
 
         &:hover {
-          color: $mainColor;
-          border-bottom: 1px solid $mainColor;
+          color: $yhwColor;
+          border-bottom: 1px solid $yhwColor;
         }
       }
 
       .active {
-        color: $mainColor;
-        border-bottom: 1px solid $mainColor;
+        color: $yhwColor;
+        border-bottom: 1px solid $yhwColor;
       }
     }
   }

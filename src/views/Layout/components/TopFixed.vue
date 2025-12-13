@@ -87,7 +87,7 @@ $sticky-height:55px;
   }
 
   .division {
-    color: $mainColor;
+    color: $yhwColor;
     width: 5px;
     font-size: 16px;
     font-weight: bold;
@@ -106,7 +106,7 @@ $sticky-height:55px;
       line-height: 1;
 
       &:hover {
-        color: $mainColor;
+        color: $yhwColor;
       }
     }
   }
@@ -132,14 +132,14 @@ $sticky-height:55px;
       display: inline-block;
 
       &:hover {
-        color: $mainColor;
-        border-bottom: 1px solid $mainColor;
+        color: $yhwColor;
+        border-bottom: 1px solid $yhwColor;
       }
     }
 
     .active {
-      color: $mainColor;
-      border-bottom: 1px solid $mainColor;
+      color: $yhwColor;
+      border-bottom: 1px solid $yhwColor;
     }
   }
 }

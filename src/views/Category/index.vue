@@ -102,7 +102,7 @@ const state = ref({
           }
 
           &:hover {
-            color: $mainColor;
+            color: $yhwColor;
           }
         }
       }
