@@ -56,7 +56,7 @@
             <a href="javascript:;">搜索推荐</a>
             <a href="javascript:;">友情链接</a>
           </p>
-          <p>CopyRight © 麦子商城</p>
+          <p>CopyRight © 有好物</p>
         </div>
       </div>
     </div>
@@ -68,12 +68,13 @@
 <style scoped lang='scss'>
 .app_footer {
   overflow: hidden;
-  background-color: #f5f5f5;
-  //margin-top: 20px;
+  //background-color: #f5f5f5;
+  margin-top: 40px;
   //padding-top: 20px;
+  border-top: 1px solid #e8e8e8;
 
   .contact {
-    background: #fff;
+    //background: #fff;
 
     .container {
       padding: 60px 0 40px 25px;

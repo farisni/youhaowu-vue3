@@ -8,6 +8,8 @@
           <el-breadcrumb-item>{{ categoryData.name }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
+
+      <!---->
       <!-- 轮播图 -->
       <div class="home-banner">
         <el-carousel :height=state.carouselHeight>

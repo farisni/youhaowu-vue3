@@ -38,9 +38,9 @@ $cover-width:240px;
 .home-product {
   width: $home-width;
   margin: 0 auto;
-  background: #fff;
+  //background: #fff;
   //margin-top: 20px;
-  border-top: 1px solid #e4e4e4;
+  //border-top: 1px solid #e4e4e4;
   //.sub {
   //  margin-bottom: 2px;
   //
