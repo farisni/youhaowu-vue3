@@ -23,7 +23,7 @@
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-              <!--<ImgageView :image-list="goods.mainPictures"/>-->
+              <ImgageView :image-list="goods.mainPictures"/>
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
@@ -123,6 +123,7 @@ import { useCartStore } from '@/stores/cartStore'
 import DetailHot from './components/DetailHot.vue'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
+import ImgageView from "@/components/ImgageView/index.vue"
 
 const goods = ref({})
 const route = useRoute()
