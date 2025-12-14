@@ -13,21 +13,40 @@
       </div>
     </header>
     <section class="login-section">
+
       <div class="wrapper">
         <nav>
-          <a href="javascript:;">账户登录</a>
+          <a @click="activeName='account'" href="javascript:;" :class="{active:activeName==='account'}">账户登录</a>
+          <a @click="activeName='qrcode'" href="javascript:;" :class="{active:activeName==='qrcode'}">扫码登录</a>
         </nav>
+        <div class="toggle">
+          <a >
+            <i class="iconfont icon-user"></i> 使用账号登录
+          </a>
+          <!--<a @click="isMsgLogin=true" href="javascript:;" v-else>-->
+          <!--  <i class="iconfont icon-msg"></i> 使用短信登录-->
+          <!--</a>-->
+        </div>
         <div class="account-box">
           <div class="form">
-            <el-form ref="formRef" :model="form" :rules="rules" label-position="right" label-width="60px"
-                     status-icon>
-              <el-form-item  label="账户" prop="account">
-                <el-input v-model="form.account"/>
+            <el-form ref="formRef" :model="form" :rules="rules"  status-icon  style="max-width: 300px">
+              <!--label="用户"-->
+              <el-form-item  label="" prop="account">
+                <el-input v-model="form.account">
+                  <template #prepend>
+                    <el-button :icon="User" />
+                  </template>
+                </el-input>
               </el-form-item>
-              <el-form-item label="密码" prop="password">
-                <el-input show-password v-model="form.password" />
+              <!--label="密码"-->
+              <el-form-item  prop="password">
+                <el-input show-password v-model="form.password" >
+                  <template #prepend>
+                    <el-button :icon="Lock" />
+                  </template>
+                </el-input>
               </el-form-item>
-              <el-form-item label-width="22px" prop="agree">
+              <el-form-item  prop="agree">
                 <el-checkbox v-model="form.agree"  size="large">
                   我已同意隐私条款和服务条款
                 </el-checkbox>
@@ -38,6 +57,7 @@
         </div>
       </div>
     </section>
+
     <footer class="login-footer">
       <div class="container">
         <p>
@@ -58,11 +78,14 @@
 import { useUserStore } from '@/stores/userStore.js'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
+import { User,Lock } from '@element-plus/icons-vue'
 
 const router = useRouter()
 
 // 获取登录时用户数据存储实例对象
 const userStore = useUserStore()
+
+const activeName = ref('account')
 
 // 表单对象
 const form = ref({
@@ -111,11 +134,12 @@ const login = () => {
       })
       /*跳转到主页， replace 不回头*/
       router.replace({ path: '/' })
-
     }
   })
 }
 </script>
+<style scoped lang="scss">
+</style>
 <style scoped lang='scss'>
 .login-header {
   background: #fff;
@@ -129,7 +153,6 @@ const login = () => {
 
   .logo {
     width: 200px;
-
     a {
       display: block;
       height: 110px;
@@ -168,6 +191,7 @@ const login = () => {
 
   .wrapper {
     width: 380px;
+    height: 370px;
     background: #fff;
     position: absolute;
     left: 50%;
@@ -175,13 +199,24 @@ const login = () => {
     transform: translate3d(100px, 0, 0);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
+    .toggle {
+      padding: 15px 40px;
+      text-align: right;
+      a {
+        color: $yhwColor;
+        i {
+          font-size: 14px;
+        }
+      }
+    }
+
     nav {
       font-size: 14px;
       height: 55px;
-      margin-bottom: 20px;
+      //margin-bottom: 20px;
       border-bottom: 1px solid #f5f5f5;
       display: flex;
-      padding: 0 40px;
+      padding: 0 60px;
       text-align: right;
       align-items: center;
 
@@ -191,7 +226,15 @@ const login = () => {
         display: inline-block;
         font-size: 18px;
         position: relative;
-        text-align: center;
+
+        &:first-child {
+          border-right: 1px solid #f5f5f5;
+          text-align: left;
+        }
+        &.active{
+          color:$yhwColor;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -220,13 +263,13 @@ const login = () => {
 }
 
 .account-box {
+  display: flex;
+  justify-content: space-around;
   .toggle {
     padding: 15px 40px;
     text-align: right;
-
     a {
       color: $yhwColor;
-
       i {
         font-size: 14px;
       }
@@ -234,72 +277,23 @@ const login = () => {
   }
 
   .form {
-    padding: 0 20px 20px 20px;
 
-    &-item {
-      margin-bottom: 28px;
+    .el-form-item {
+      margin-bottom: 22px;
 
-      .input {
-        position: relative;
-        height: 36px;
-
-        >i {
-          width: 34px;
-          height: 34px;
-          background: #cfcdcd;
-          color: #fff;
-          position: absolute;
-          left: 1px;
-          top: 1px;
-          text-align: center;
-          line-height: 34px;
-          font-size: 18px;
-        }
-
-        input {
-          padding-left: 44px;
-          border: 1px solid #cfcdcd;
-          height: 36px;
-          line-height: 36px;
-          width: 100%;
-
-          &.error {
-            border-color: $priceColor;
-          }
-
-          &.active,
-          &:focus {
-            border-color: $yhwColor;
-          }
-        }
-
-        .code {
-          position: absolute;
-          right: 1px;
-          top: 1px;
-          text-align: center;
-          line-height: 34px;
-          font-size: 14px;
-          background: #f5f5f5;
-          color: #666;
-          width: 90px;
-          height: 34px;
-          cursor: pointer;
-        }
-      }
-
-      >.error {
-        position: absolute;
-        font-size: 12px;
-        line-height: 28px;
-        color: $priceColor;
-
-        i {
-          font-size: 14px;
-          margin-right: 2px;
-        }
+      :deep(.el-form-item__error) {
+        padding-top: 5px;
       }
     }
+
+    .el-input {
+      width: 300px;
+      height: 38px;
+      //margin-bottom: 10px;
+      //margin: 5px auto;
+    }
+
+
 
     .agree {
       a {
