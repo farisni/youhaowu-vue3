@@ -1,12 +1,12 @@
-// import { useUserStore } from '@/stores/userStore'
+// import { useUserStore } from '@/stores/userStore.js'
 // import { delCartAPI, findNewCartListAPI, insertCart, updateCartAPI } from '@/apis/cart'
 
 export const useCartStore = defineStore('cart', () => {
 
   //   // 获取用户信息
-//   const userStore = useUserStore()
+//   const userStore.js = useUserStore()
 //   // 是否登录
-//   const isLogin = computed(() => userStore.userInfo.token)
+//   const isLogin = computed(() => userStore.js.userInfo.token)
   const isLogin = true;
 //   // 获取登录后最新购物车列表
 //   const updateLoginCartList = async () => {

@@ -134,7 +134,7 @@ const { cartList } = storeToRefs(cartStore)
       color: $yhwColor;
     }
 
-    .xtx-numbox {
+    .yhw-numbox {
       margin: 0 auto;
       width: 120px;
     }
@@ -183,7 +183,7 @@ const { cartList } = storeToRefs(cartStore)
     justify-content: space-between;
     padding: 0 30px;
 
-    .xtx-checkbox {
+    .yhw-checkbox {
       color: #999;
     }
 

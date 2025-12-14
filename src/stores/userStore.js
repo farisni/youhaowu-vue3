@@ -1,0 +1,43 @@
+import api from '@/api/login'
+// import { mergeCartAPI } from '@/apis/cart'
+import { useCartStore } from '@/stores/cartStore'
+export const useUserStore = defineStore('user', () => {
+  // 获取用户数据
+  const userInfo = ref({})
+
+  // 获取购物车存储实例对象
+  const cartStore = useCartStore()
+
+  // 定义获取用户数据方法
+  const getUserInfo = async (data) => {
+    const res = await api.login(data)
+    userInfo.value = res.result
+
+    // 合并购物车
+    // await mergeCartAPI(cartStore.cartList.map(item => {
+    //   return {
+    //     skuId: item.skuId,
+    //     selected: item.selected,
+    //     count: item.count
+    //   }
+    // }))
+
+    // 更新购物车列表
+    // cartStore.updateLoginCartList()
+  }
+
+  // 清除用户信息
+  const clearUserInfo = () => {
+    userInfo.value = {}
+  }
+
+  // 返回数据
+  return {
+    userInfo,
+    getUserInfo,
+    clearUserInfo
+  }
+}, {
+  // pinia持久化
+  persist: true
+})

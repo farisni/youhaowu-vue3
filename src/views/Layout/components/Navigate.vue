@@ -2,20 +2,20 @@
   <nav class="app-topnav">
     <div class="container">
       <ul>
-        <template v-if="1<0"> <!--userStore.userInfo.token-->
-        <!--  <li><a href="javascript:;"><i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}</a></li>-->
-        <!--  <li>-->
-        <!--    <el-popconfirm title="确认退出吗?" confirm-button-text="确认" @confirm="logout" cancel-button-text="取消">-->
-        <!--      <template #reference>-->
-        <!--        <a href="javascript:;">退出登录</a>-->
-        <!--      </template>-->
-        <!--    </el-popconfirm>-->
-        <!--  </li>-->
-        <!--  <li><a href="javascript:;">我的订单</a></li>-->
-        <!--  <li><a href="javascript:;" @click="$router.push('/member')">会员中心</a></li>-->
+        <template v-if="userStore.userInfo.token">
+          <li><a href="javascript:;"><i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}</a></li>
+          <li>
+            <el-popconfirm title="确认退出吗?" confirm-button-text="确认" @confirm="logout" cancel-button-text="取消">
+              <template #reference>
+                <a href="javascript:;">退出登录</a>
+              </template>
+            </el-popconfirm>
+          </li>
+          <li><a href="javascript:;">我的订单</a></li>
+          <li><a href="javascript:;" @click="$router.push('/member')">会员中心</a></li>
         </template>
         <template v-else>
-          <li><a href="javascript:;" @click="">请先登录</a></li>
+          <li><a href="javascript:;" @click="$router.push('/login')">请先登录</a></li>
           <li><a href="javascript:;">帮助中心</a></li>
           <li><a href="javascript:;">关于我们</a></li>
         </template>
@@ -25,17 +25,17 @@
 </template>
 <script setup>
 // import { useCartStore } from '@/stores/cartStore'
-// import { useUserStore } from '@/stores/userStore'
-// const userStore = useUserStore()
+import { useUserStore } from '@/stores/userStore.js'
+const userStore = useUserStore()
 // const cartStore = useCartStore()
 //
-// const router = useRouter()
+const router = useRouter()
 
 // 退出登录
 const logout = () => {
-  // userStore.clearUserInfo()
+  userStore.clearUserInfo()
   // cartStore.clearCart()
-  // router.push('/login')
+  router.push('/login')
 }
 </script>
 <style scoped lang="scss">
