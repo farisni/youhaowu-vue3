@@ -3,7 +3,7 @@
     <header class="login-header">
       <div class="container m-top-20">
         <h1 class="logo">
-          <RouterLink to="/">有好物</RouterLink>
+          <RouterLink to="#">有好物</RouterLink>
         </h1>
         <RouterLink class="entry" to="/">
           进入网站首页
@@ -34,7 +34,7 @@
               <el-form-item  label="" prop="account">
                 <el-input v-model="form.account" placeholder="请输入账号">
                   <template #prepend>
-                    <el-button><el-icon :size="20"><User /></el-icon></el-button>
+                    <el-button><el-icon :size="18"><User /></el-icon></el-button>
                   </template>
                 </el-input>
               </el-form-item>
@@ -42,7 +42,7 @@
               <el-form-item  prop="password" >
                 <el-input show-password v-model="form.password" placeholder="请输入密码">
                   <template #prepend>
-                    <el-button><el-icon :size="20"><Lock /></el-icon></el-button>
+                    <el-button><el-icon :size="18"><Lock /></el-icon></el-button>
                   </template>
                 </el-input>
               </el-form-item>
