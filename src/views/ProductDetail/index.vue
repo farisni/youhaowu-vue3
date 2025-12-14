@@ -23,7 +23,7 @@
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-              <ImageView :image-list="goods.mainPictures"/>
+              <YhwImageView :image-list="goods.mainPictures"/>
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
@@ -72,7 +72,7 @@
                 </dl>
               </div>
               <!-- sku组件 -->
-              <Sku :goods="goods" @change="skuChange"/>
+              <YhwSku :goods="goods" @change="skuChange"/>
               <!-- 数据组件 -->
               <!--<el-input-number v-model="count" min="1" />-->
               <!--&lt;!&ndash; 按钮组件 &ndash;&gt;-->
@@ -123,8 +123,8 @@ import { useCartStore } from '@/stores/cartStore'
 import DetailHot from './components/DetailHot.vue'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
-import ImageView from "@/components/ImageView/index.vue"
-import Sku from '@/components/Sku/index.vue'
+// import ImageView from "@/components/ImageView/index.vue"
+// import Sku from '@/components/Sku/index.vue'
 
 const goods = ref({})
 const route = useRoute()
