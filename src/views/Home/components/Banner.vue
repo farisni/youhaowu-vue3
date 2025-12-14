@@ -21,16 +21,17 @@ onMounted(() => getBanner())
 
 <style scoped lang='scss'>
 .home-banner {
-  width: $home-width; //
+  width: calc($home-width - 250px); //
   height: 500px;
   position: absolute;
-  left: 0; // 距离左边让出Category位置 改banner和Category 位置
+  left: 250px; // 距离左边让出Category位置 改banner和Category 位置
   top: 0;
   z-index: 98;
 
   img {
     width: 100%;
     height: 500px;
+    object-fit: cover;
   }
 }
 </style>
