@@ -50,7 +50,7 @@ $cover-width:240px;
   //    border-radius: 4px;
   //
   //    &:hover {
-  //      background: $xtxColor;
+  //      background: $yhwColor;
   //      color: #fff;
   //    }
   //
