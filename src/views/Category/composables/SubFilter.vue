@@ -15,13 +15,14 @@
       </div>
     </div>
   </div>
-  <!--<div v-else class="sub-filter">-->
-  <!--  <XtxSkeleton class="item" width="800px" height="40px"  />-->
-  <!--  <XtxSkeleton class="item" width="800px" height="40px"  />-->
-  <!--  <XtxSkeleton class="item" width="600px" height="40px"  />-->
-  <!--  <XtxSkeleton class="item" width="600px" height="40px"  />-->
-  <!--  <XtxSkeleton class="item" width="600px" height="40px"  />-->
-  <!--</div>-->
+  <!--无数据时的展示框架-->
+  <div v-else class="sub-filter">
+    <YhwSkeleton class="item" width="800px" height="40px"  />
+    <YhwSkeleton class="item" width="800px" height="40px"  />
+    <YhwSkeleton class="item" width="600px" height="40px"  />
+    <YhwSkeleton class="item" width="600px" height="40px"  />
+    <YhwSkeleton class="item" width="600px" height="40px"  />
+  </div>
 </template>
 <script>
 import api from '@/api/category'
@@ -74,13 +75,13 @@ export default {
     const changeBrand = (brandId) => {
       if (filterData.value.selectedBrand === brandId) return
       filterData.value.selectedBrand = brandId
-      emit('filter-change', getFilterParams()) // emit父级传递方法
+      emit('filter-change', getFilterParams()) // emit父级传递的方法
     }
     // 选中属性
     const changeAttr = (p, attrId) => {
       if (p.selectedProp === attrId) return
       p.selectedProp = attrId
-      emit('filter-change', getFilterParams())
+      emit('filter-change', getFilterParams())  // emit父级传递的方法
     }
 
     return { filterData, filterLoading, changeBrand, changeAttr }
@@ -113,5 +114,8 @@ export default {
       }
     }
   }
+}
+.yhw-skeleton {
+  padding: 10px 0;
 }
 </style>
