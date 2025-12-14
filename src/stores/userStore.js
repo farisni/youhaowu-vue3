@@ -1,43 +1,48 @@
 import api from '@/api/login'
 // import { mergeCartAPI } from '@/apis/cart'
-import { useCartStore } from '@/stores/cartStore'
-export const useUserStore = defineStore('user', () => {
-  // 获取用户数据
-  const userInfo = ref({})
+import {useCartStore} from '@/stores/cartStore'
 
-  // 获取购物车存储实例对象
-  const cartStore = useCartStore()
+export const useUserStore = defineStore(
+  'user',
+  // 回调
+  () => {
+    // 获取用户数据
+    const userInfo = ref({})
 
-  // 定义获取用户数据方法
-  const getUserInfo = async (data) => {
-    const res = await api.login(data)
-    userInfo.value = res.result
+    // 获取购物车存储实例对象
+    const cartStore = useCartStore()
 
-    // 合并购物车
-    // await mergeCartAPI(cartStore.cartList.map(item => {
-    //   return {
-    //     skuId: item.skuId,
-    //     selected: item.selected,
-    //     count: item.count
-    //   }
-    // }))
+    // 定义获取用户数据方法
+    const getUserInfo = async (data) => {
+      const res = await api.login(data)
+      userInfo.value = res.result
 
-    // 更新购物车列表
-    // cartStore.updateLoginCartList()
-  }
+      // 合并购物车
+      // await mergeCartAPI(cartStore.cartList.map(item => {
+      //   return {
+      //     skuId: item.skuId,
+      //     selected: item.selected,
+      //     count: item.count
+      //   }
+      // }))
 
-  // 清除用户信息
-  const clearUserInfo = () => {
-    userInfo.value = {}
-  }
+      // 更新购物车列表
+      // cartStore.updateLoginCartList()
+    }
 
-  // 返回数据
-  return {
-    userInfo,
-    getUserInfo,
-    clearUserInfo
-  }
-}, {
-  // pinia持久化
-  persist: true
-})
+    // 清除用户信息
+    const clearUserInfo = () => {
+      userInfo.value = {}
+    }
+
+    // 返回数据
+    return {
+      userInfo,
+      getUserInfo,
+      clearUserInfo
+    }
+  },
+  {
+    // pinia持久化
+    persist: true
+  })

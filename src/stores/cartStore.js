@@ -107,7 +107,14 @@ export const useCartStore = defineStore('cart', () => {
   }
 
 
-})
+},
+  {
+    // pinia持久化
+    persist: true
+  }
+
+
+)
 
 
 // export const useCartStore = defineStore('cart', () => {
