@@ -2,7 +2,7 @@ import axios from "axios";
 import {ElMessage} from "element-plus";
 import 'element-plus/theme-chalk/el-message.css'
 import { useUserStore } from '@/stores/userStore'
-
+import router from "@/router/index.js";
 
 const http = axios.create({
   baseURL:'http://pcapi-xiaotuxian-front-devtest.itheima.net',
@@ -40,7 +40,16 @@ http.interceptors.response.use(
   (error) => {
     // 统一错误提示
     ElMessage({type: 'error', message: error.response.data.message})
+    // 401 token失效处理
+    const userStore = useUserStore()
+    // token失效处理
+    if(error.response.status === 401) {
+      // console.log("******token 失效********")
+      userStore.clearUserInfo() // 清除用户失效token信息
+      router.push('/login')
+    }
     console.log('响应失败', error);
+
     return Promise.reject(error);
   }
 );
