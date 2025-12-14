@@ -1,13 +1,13 @@
 // import { useUserStore } from '@/stores/userStore'
 // import { delCartAPI, findNewCartListAPI, insertCart, updateCartAPI } from '@/apis/cart'
 
-export const useCartStore = defineStore('cart', () => {})
-// export const useCartStore = defineStore('cart', () => {
-//
-//   // 获取用户信息
+export const useCartStore = defineStore('cart', () => {
+
+  //   // 获取用户信息
 //   const userStore = useUserStore()
 //   // 是否登录
 //   const isLogin = computed(() => userStore.userInfo.token)
+  const isLogin = true;
 //   // 获取登录后最新购物车列表
 //   const updateLoginCartList = async () => {
 //     const res = await findNewCartListAPI()
@@ -15,26 +15,44 @@ export const useCartStore = defineStore('cart', () => {})
 //   }
 //
 //
-//   const cartList = ref([])
-//   // 添加购物车
-//   const addCart = async (goods) => {
-//     const { skuId, count } = goods
-//     if(isLogin.value) {
-//       // 登录
-//       await insertCart({ skuId, count })
-//       await updateLoginCartList()
-//     } else {
-//       // 未登录
-//       // 判断商品是否在购物车
-//       const findItem = cartList.value.find(item => goods.skuId === item.skuId)
-//       if (findItem) {
-//         findItem.count += goods.count
-//       } else {
-//         cartList.value.push(goods)
-//       }
-//     }
+
+  const cartList = ref([])
+  // 添加购物车
+  const addCart = async (goods) => {
+    const { skuId, count } = goods
+    if(isLogin.value) {
+      // 登录
+      await insertCart({ skuId, count })
+      await updateLoginCartList()
+    } else {
+      // 未登录
+      // 判断商品是否在购物车
+      const findItem = cartList.value.find(item => goods.skuId === item.skuId)
+      if (findItem) {
+        findItem.count += goods.count
+      } else {
+        cartList.value.push(goods)
+      }
+    }
+
+  }
+
+
+  // todo 临时写在这里
+  return {
+    cartList, addCart
+  }
+
+
+})
+
+
+// export const useCartStore = defineStore('cart', () => {
 //
-//   }
+
+
+
+
 //
 //   // 删除购物车
 //   const delCart = async (skuId) => {

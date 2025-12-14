@@ -73,15 +73,15 @@
               </div>
               <!-- sku组件 -->
               <YhwSku :goods="goods" @change="skuChange"/>
-              <!-- 数据组件 -->
-              <!--<el-input-number v-model="count" min="1" />-->
-              <!--&lt;!&ndash; 按钮组件 &ndash;&gt;-->
-              <!--<div>-->
-              <!--  &lt;!&ndash;addCart&ndash;&gt;-->
-              <!--  <el-button size="large" class="btn" @click="">-->
-              <!--    加入购物车-->
-              <!--  </el-button>-->
-              <!--</div>-->
+               <!--数据组件-->
+              <el-input-number v-model="count" :min="1" />
+              <!-- 按钮组件 -->
+              <div>
+                <!--addCart-->
+                <el-button size="large" class="btn" @click="addCart">
+                  加入购物车
+                </el-button>
+              </div>
 
             </div>
           </div>
@@ -146,26 +146,27 @@ const skuChange = (sku) => {
 // 购物车数量
 const count = ref(1)
 
-// const cartStore = useCartStore()
-// // 添加购物车
-// const addCart = () => {
-//   // 判断当前的商品是否选择规格完毕
-//   if(skuObj.skuId) {
-//     // 选择完毕后调用store中的添加商品方法
-//     cartStore.addCart({
-//       id: goods.value.id,
-//       name: goods.value.name,
-//       picture: goods.value.mainPictures[0],
-//       price: goods.value.price,
-//       count: count.value,
-//       skuId: skuObj.skuId,
-//       attrsText: skuObj.specsText,
-//       selected: true
-//     })
-//   } else {
-//     ElMessage.warning('请选择规格')
-//   }
-// }
+const cartStore = useCartStore()
+// 添加购物车
+const addCart = () => {
+  // 判断当前的商品是否选择规格完毕
+  if(skuObj.skuId) {
+    // 选择完毕后调用store中的添加商品方法
+    cartStore.addCart({
+      id: goods.value.id,
+      name: goods.value.name,
+      picture: goods.value.mainPictures[0],
+      price: goods.value.price,
+      count: count.value,
+      skuId: skuObj.skuId,
+      attrsText: skuObj.specsText,
+      selected: true
+    })
+    console.log(cartStore.cartList);
+  } else {
+    ElMessage.warning('请选择规格')
+  }
+}
 </script>
 
 <style scoped lang='scss'>
