@@ -9,7 +9,7 @@
               <!-- model-value是单向绑定 -->
               <el-checkbox :model-value="cartStore.isAll" @change="cartStore.checkAll"/>
             </th>
-            <th width="400">商品信息</th>
+            <th width="400"><span style="float: left">商品信息</span></th>
             <th width="220">单价</th>
             <th width="180">数量</th>
             <th width="180">小计</th>
@@ -61,7 +61,6 @@
             </td>
           </tr>
           </tbody>
-
         </table>
       </div>
       <!-- 操作栏 -->
