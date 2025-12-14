@@ -4,7 +4,7 @@ export default {
   getTopCategory(id) {
     return http.get('/category',{params:{id}})
   },
-  getCategoryFilterAPI(id) {
+  getCategoryFilter(id) {
     return http.get('/category/sub/filter',{params:{id}})
   },
 

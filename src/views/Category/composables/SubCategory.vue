@@ -9,8 +9,8 @@
         <el-breadcrumb-item>{{ filterData.name }}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <!---->
-    <div><h1>TODO 二级类目筛选区</h1></div>
+    <!--筛选区-->
+    <SubFilter/>
     <div class="sub-container">
       <el-tabs v-model="reqData.sortField" @tab-change="tabChange">
         <el-tab-pane label="最新商品" name="publishTime"></el-tab-pane>
@@ -28,12 +28,14 @@
 <script setup>
 import api from '@/api/category'
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
+import SubFilter from '@/views/Category/composables/SubFilter.vue'
+
 
 const route = useRoute()
 // 根据ID获取商品一级分类
 const filterData = ref({})
 const getFilterData = async (id) => {
-  const res = await api.getCategoryFilterAPI(id)
+  const res = await api.getCategoryFilter(id)
   filterData.value = res.result
 }
 

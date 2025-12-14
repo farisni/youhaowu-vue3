@@ -10,7 +10,7 @@
       </div>
 
       <!---->
-      <!-- 轮播图 -->
+      <!-- 轮播图 sub-bread -->
       <div class="home-banner">
         <el-carousel :height=state.carouselHeight>
           <el-carousel-item v-for="item in bannerList" :key="item.id">
