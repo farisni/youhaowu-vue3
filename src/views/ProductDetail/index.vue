@@ -124,7 +124,7 @@ import DetailHot from './components/DetailHot.vue'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 // import ImageView from "@/components/ImageView/index.vue"
-// import Sku from '@/components/Sku/index.vue'
+// import YhwSku from '@/components/YhwSku/index.vue'
 
 const goods = ref({})
 const route = useRoute()

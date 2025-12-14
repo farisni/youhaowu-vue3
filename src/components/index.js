@@ -1,7 +1,7 @@
 
 // 把compomens里的所有组件全局注册
 import ImageView from '@/components/ImageView/index.vue'
-import Sku from '@/components/Sku/index.vue'
+import Sku from '@/components/YhwSku/index.vue'
 
 // const { install } = require("element-plus");
 
