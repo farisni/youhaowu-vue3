@@ -9,18 +9,11 @@ export default {
   },
 
   /**
-   * @description: 获取导航数据
-   * @data {
-     categoryId: 1005000 ,
-     page: 1,
-     pageSize: 20,
-     sortField: 'publishTime' | 'orderNum' | 'evaluateNum'
-   }
-   * @return {*}
+   * 获取分类下的商品（带筛选条件）
    */
-// 获取二级分类商品列表
-  getSecondCategoryAPI (data){
-    return http.post('/category/goods/temporary',data);
-  }
+  findSubCategoryGoods (params) {
+    return http.post('/category/goods/temporary', params)
+  },
+
 
 }
