@@ -1,5 +1,5 @@
 // 用于封装根据一级分类ID获取商品分类数据
-import  api from '@/api/category'
+import  api from '@/api/categoryApi.js'
 
 export const useCategory = () => {
   const route = useRoute()

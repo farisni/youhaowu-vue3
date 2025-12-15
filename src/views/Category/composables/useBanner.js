@@ -1,5 +1,5 @@
 // 封装一级分类轮播相关数据
-import api from '@/api/home.js'
+import api from '@/api/homeApi.js'
 
 export const useBanner = () => {
   const bannerList = ref([])

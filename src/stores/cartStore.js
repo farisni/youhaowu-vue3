@@ -1,5 +1,5 @@
 import { useUserStore } from '@/stores/userStore.js'
-import api from '@/api/cart'
+import api from '@/api/cartApi.js'
 
 export const useCartStore = defineStore('cart', () => {
 

@@ -14,7 +14,7 @@
 </template>
 <script setup>
 import Panel from './Panel.vue'
-import api from '@/api/home.js'
+import api from '@/api/homeApi.js'
 
 const hotList = ref([])
 const getHotList = async () => {

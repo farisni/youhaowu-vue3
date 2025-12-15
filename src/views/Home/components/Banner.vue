@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import api from '@/api/home.js'
+import api from '@/api/homeApi.js'
 const bannerList = ref([])
 const getBanner = async () => {
   const res = await api.getBanner()

@@ -11,7 +11,7 @@
   </div>
 </template>
 <script setup>
-import api from '@/api/product'
+import api from '@/api/productApi.js'
 
 const props = defineProps({
   hotType: {

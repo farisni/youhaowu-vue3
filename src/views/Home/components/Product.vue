@@ -20,7 +20,7 @@
 </template>
 <script setup>
 import HomePanel from '@/views/Home/components/Panel.vue'
-import api  from '@/api/home.js'
+import api  from '@/api/homeApi.js'
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
 const goodsProduct = ref([])
 const getGoodsList = async () => {

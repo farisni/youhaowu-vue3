@@ -26,7 +26,7 @@
   </div>
 </template>
 <script setup>
-import api from '@/api/category'
+import api from '@/api/categoryApi.js'
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
 import SubFilter from '@/views/Category/composables/SubFilter.vue'
 

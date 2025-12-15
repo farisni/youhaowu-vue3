@@ -15,7 +15,7 @@
 </template>
 <script setup>
 import Panel from './Panel.vue'
-import api from '@/api/home.js'
+import api from '@/api/homeApi.js'
 
 const newList = ref([])
 const getNewList = async () => {

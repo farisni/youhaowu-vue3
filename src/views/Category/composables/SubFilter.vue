@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import api from '@/api/category'
+import api from '@/api/categoryApi.js'
 import { useRoute } from 'vue-router'
 import { ref, watch } from 'vue'
 export default {

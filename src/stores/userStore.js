@@ -1,4 +1,4 @@
-import api from '@/api/login'
+import api from '@/api/loginApi.js'
 // import { mergeCartAPI } from '@/apis/cart'
 import {useCartStore} from '@/stores/cartStore'
 

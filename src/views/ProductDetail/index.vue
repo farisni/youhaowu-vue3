@@ -121,7 +121,7 @@
 </template>
 
 <script setup>
-import api from '@/api/product'
+import api from '@/api/productApi.js'
 import { useCartStore } from '@/stores/cartStore'
 import DetailHot from './components/DetailHot.vue'
 import { ElMessage } from 'element-plus'
