@@ -9,7 +9,7 @@ export const useCartStore = defineStore('cart', () => {
   const isLogin = computed(() => userStore.userInfo.token)
   // 获取登录后最新购物车列表
   const updateLoginCartList = async () => {
-    const res = await api.findNewCartListAPI() // ok
+    const res = await api.findNewCartList() // ok
     cartList.value = res.result
   }
 
@@ -40,7 +40,7 @@ export const useCartStore = defineStore('cart', () => {
   const delCart = async (skuId) => {
     if(isLogin.value) {
       // 登录
-      await api.delCartAPI([skuId]) //ok
+      await api.delCart([skuId]) //ok
       await updateLoginCartList()
     } else {
       cartList.value = cartList.value.filter(item => item.skuId !== skuId)
@@ -58,7 +58,7 @@ export const useCartStore = defineStore('cart', () => {
   const updateCart = async (goods) => {
     const { skuId, count, selected } = goods
     if(isLogin.value) {
-      await api.updateCartAPI(skuId, { count, selected }) // ok
+      await api.updateCart(skuId, { count, selected }) // ok
     }
   }
 

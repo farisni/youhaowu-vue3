@@ -24,17 +24,17 @@
   </nav>
 </template>
 <script setup>
-// import { useCartStore } from '@/stores/cartStore'
+import { useCartStore } from '@/stores/cartStore'
 import { useUserStore } from '@/stores/userStore.js'
 const userStore = useUserStore()
-// const cartStore = useCartStore()
+const cartStore = useCartStore()
 //
 const router = useRouter()
 
 // 退出登录
 const logout = () => {
   userStore.clearUserInfo()
-  // cartStore.clearCart()
+  cartStore.clearCart() // 清空购物车
   router.push('/login')
 }
 </script>
